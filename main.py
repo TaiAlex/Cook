@@ -175,11 +175,6 @@ gJbest = 999999
 robot1 = Robot(start, "delta1.png", 1)
 robot1.theta_d = np.pi/2
 while running:
-    # for event in pygame.event.get():
-    #     if event.type == pygame.QUIT:
-    #         running = False
-    #     robot.move(event)
-    
     for generation in range(max_iteration):
         pJbest = 999999
         # Tạo thế hệ đầu tiên với 5 robot
@@ -194,6 +189,9 @@ while running:
         temps = robots.copy()
         print(f'Generation: {generation+1}')
         while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
             second1 = time.strftime("%S")
             minute1 = time.strftime("%M")
             time1 = 60*int(minute1) + int(second1)
