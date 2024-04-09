@@ -236,22 +236,3 @@ while running:
             lasttime = pygame.time.get_ticks()
             pygame.display.update()
             environment.map.blit(track, (0, 0))
-    # break
-# V = gbest[0:10].reshape(2, 5)
-# W = gbest[10:15].reshape(5, 1)
-# for gen in range(max_iteration):
-#     robot1.vxg = 100
-#     robot1.theta_d = robot1.neuron(np.array([[robot1.sensor_data[5]], [robot1.sensor_data[1]]]), V, W)[0, 0]
-#     robot1.move()
-#     robot1.cost_function  = ((robot1.x) - end_point[0])**2 + ((robot1.y) - end_point[1])**2 + (robot1.theta - np.pi/2)**2
-#     environment.robot_frame((robot1.x, robot1.y), robot1.theta)
-#     environment.robot_sensor((robot1.x, robot1.y), robot1.points)
-#     environment.info(generation + 1, delta%100, int(pJbest), int(gJbest))
-#     robot1.check_crash()
-#     robot1.update_sensor_data()
-#     robot1.draw(environment.map)
-#     e = robot1.cost_function
-#     dt = (pygame.time.get_ticks() - lasttime)/1000
-#     lasttime = pygame.time.get_ticks()
-#     pygame.display.update()
-#     environment.map.blit(track, (0, 0))
