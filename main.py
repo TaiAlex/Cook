@@ -160,12 +160,13 @@ running = True
 dt = 0
 lasttime = pygame.time.get_ticks()
 environment = Envir(dims)
+
 # Số thế hệ bạn muốn tạo
+max_iteration = 20
 N = 20
 npar = 15
 min_c = -1
 max_c = 1
-max_iteration = 20
 c1 = 0.1
 c2 = 0.1
 P = min_c * np.ones((N, npar)) + (max_c - min_c) * np.random.rand(N, npar)
@@ -177,7 +178,7 @@ robot1.theta_d = np.pi/2
 while running:
     for generation in range(max_iteration):
         pJbest = 999999
-        # Tạo thế hệ đầu tiên với 5 robot
+        # Tạo thế hệ đầu tiên
         robots = []
         second = time.strftime("%S")
         minute = time.strftime("%M")
@@ -187,7 +188,7 @@ while running:
             robot.theta_d = np.pi/2
             robots.append(robot)
         temps = robots.copy()
-        print(f'Generation: {generation+1}')
+        print(f'Generation: {generation + 1}')
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
